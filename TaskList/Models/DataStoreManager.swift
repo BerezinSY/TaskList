@@ -59,11 +59,11 @@ class DataStoreManager {
     }
     
     // MARK: - Edit
-    func edit(titleInCurrentTask text: String?, at indexPath: IndexPath) {
+    func edit(titleInCurrentTask text: String?, at index: Int) {
         var tasks = fecthData()
-        let selectedTask = tasks.remove(at: indexPath.row)
+        let selectedTask = tasks.remove(at: index)
         selectedTask.title = text
-        tasks.insert(selectedTask, at: indexPath.row)
+        tasks.insert(selectedTask, at: index)
         save(context: persistentContainer.viewContext)
     }
 

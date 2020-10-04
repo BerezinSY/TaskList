@@ -149,7 +149,7 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showAlert(title: "Edit Task", message: "Edit Task and press OK") { (text) in
-            DataStoreManager.shared.edit(titleInCurrentTask: text, at: indexPath)
+            DataStoreManager.shared.edit(titleInCurrentTask: text, at: indexPath.row)
             tableView.reloadData()
         }
         tableView.deselectRow(at: indexPath, animated: true)
